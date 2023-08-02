@@ -23,27 +23,27 @@ The use of ROS 2 launch files seems scattered. In this repository we demonstrate
 ### General Setup
 For the general setup, do:
 
-1. In `package.xml`, add 
+1. In [package.xml](package.xml), add 
     ```xml
     <builtool_depend>ament_cmake_python</buildtool_depend>
     ```
-2. In `CMakeLists.txt, add
+2. In [CMakeLists.txt](CMakeLists.txt), add
     ```CMake
     find_package(ament_cmake_python REQUIRED)
     ...
     # install mixins
     ament_python_install_package(ros2_launch_mixin)
     ```
-3. As in step 2, put your Mixins into `ros2_launch_mixin` folder (or your desired name). Add an `__init__.py` file.
+3. As in step 2, put your Mixins into [ros2_launch_mixin](ros2_launch_mixin) folder (or your desired name). Add an [__init__.py](ros2_launch_mixin/__init__.py) file.
 
 ### Create your Mixin
-Create Mixin classes for your package. 
+Create Mixin classes for your package, see [mixins.py](ros2_launch_mixin/mixins.py):
 
 1. For each node, launch argument etc. create a static method
 2. Prefix them with `node_` for nodes and `arg_` for arguments (this helps code completion)
 
 ### Example Use
-And example use if shown in the [turtlesim_hello_world.launch.py](launch/turtlesim_hello_world.launch.py) launch file. You'll do things like
+An example use is shown in the [turtlesim_hello_world.launch.py](launch/turtlesim_hello_world.launch.py) launch file. You'll do things like
 
 ```python
 ld = LaunchDescription()
@@ -67,7 +67,7 @@ class MyNewLaunch(HelloWorldMixin, TurtleSimMixin):
 ```
 
 ## Code Completion Setup (VS Code)
-For code completion extend the Python path.
+For code completion extend the Python path:
 
 1. In [settings.json](.vscode/settings.json) add
     ```json
