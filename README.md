@@ -34,7 +34,7 @@ For the general setup, do:
     # install mixins
     ament_python_install_package(launch_mixins)
     ```
-3. Put your Mixins into [launch_mixins/demo_launch](launch_mixins/demo_launch) folder (or your desired name). Add [launch_mixins/__init__.py](launch_mixins/__init__.py) and [launch_mixins/demo_launch/__init__.py](launch_mixins/demo_launch/__init__.py) file. Replace `demo_launch` by your package name.
+3. Put your Mixins into [launch_mixins/demo_launch](launch_mixins/demo_launch) folder (or your desired name). Add [launch_mixins/\_\_init\_\_.py](launch_mixins/__init__.py) and [launch_mixins/demo_launch/\_\_init\_\_.py](launch_mixins/demo_launch/__init__.py) file. Replace `demo_launch` by your package name.
 
 ### Create your Mixin
 Create Mixin classes for your package, see [mixins.py](launch_mixins/demo_launch/mixins.py):
