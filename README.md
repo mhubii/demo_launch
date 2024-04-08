@@ -1,4 +1,4 @@
-# ROS 2 Launch Mixin
+# Demo Launch
 The use of ROS 2 launch files seems scattered. In this repository we demonstrate how to structure ROS 2 launch files as **Mixins**. This offers some advantages:
 
 - Code completion (so to understand what nodes / arguments a package offers / needs)
@@ -16,7 +16,7 @@ The use of ROS 2 launch files seems scattered. In this repository we demonstrate
 
     - **Mixins**
         ```python
-        from ros2_launch_mixin.mixins import TurtleSimMixin, HelloWorldMixin
+        from launch_mixins.demo_launch import TurtleSimMixin, HelloWorldMixin
         ```
 
 ## How To
@@ -32,12 +32,12 @@ For the general setup, do:
     find_package(ament_cmake_python REQUIRED)
     ...
     # install mixins
-    ament_python_install_package(ros2_launch_mixin)
+    ament_python_install_package(launch_mixins)
     ```
-3. As in step 2, put your Mixins into [ros2_launch_mixin](ros2_launch_mixin) folder (or your desired name). Add an [__init__.py](ros2_launch_mixin/__init__.py) file.
+3. Put your Mixins into [launch_mixins/demo_launch](launch_mixins/demo_launch) folder (or your desired name). Add [launch_mixins/__init__.py](launch_mixins/__init__.py) and [launch_mixins/demo_launch/__init__.py](launch_mixins/demo_launch/__init__.py) file. Replace `demo_launch` by your package name.
 
 ### Create your Mixin
-Create Mixin classes for your package, see [mixins.py](ros2_launch_mixin/mixins.py):
+Create Mixin classes for your package, see [mixins.py](launch_mixins/demo_launch/mixins.py):
 
 1. For each node, launch argument etc. create a static method
 2. Prefix them with `node_` for nodes and `arg_` for arguments (this helps code completion)
@@ -77,5 +77,5 @@ For code completion extend the Python path:
     ```
 2. In [.env](.vscode/.env) add (requires `colcon build` this package)
     ```
-    PYTHONPATH=../../install/ros2_launch_mixin/local/lib/python3.10
+    PYTHONPATH=../../install/launch_mixins/local/lib/python3.10
     ```

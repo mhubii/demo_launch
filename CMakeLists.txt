@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(ros2_launch_mixin)
+project(demo_launch_mixin)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -15,6 +15,6 @@ install(DIRECTORY launch
 )
 
 # install mixins
-ament_python_install_package(ros2_launch_mixin)
+ament_python_install_package(launch_packages)
 
 ament_package()
